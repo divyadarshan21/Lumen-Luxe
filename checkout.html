@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | LUMEN LUXE</title>
+  <meta name="description" content="Complete your purchase with 256-bit bank grade encryption and express delivery tracking.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-container">
+      <div class="announcement-ticker">
+        <span class="live-dot"></span>
+        <span>🔒 256-Bit Encrypted Checkout Session • Verified by Visa & Mastercard SecureCode</span>
+      </div>
+      <div class="announcement-meta">
+        <select id="currencySelector" class="selector-dropdown" title="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+        <button id="themeToggleBtn" class="selector-dropdown" title="Toggle Light/Dark Theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">✦</div>
+        <div class="brand-name">LUMEN<span>LUXE</span></div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="cart.html" class="nav-link">Back to Bag</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="orders.html" class="btn-icon" title="My Orders">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="cart.html">Shopping Bag</a>
+        <span class="separator">/</span>
+        <span class="current">Secure Checkout</span>
+      </nav>
+
+      <div class="section-header">
+        <div>
+          <h1 class="section-title">Finalize Order</h1>
+          <p class="section-subtitle">Please verify your delivery address and authorized payment credentials.</p>
+        </div>
+      </div>
+
+      <!-- Checkout 2-Column Grid -->
+      <form id="checkoutForm" onsubmit="CheckoutPage.handleSubmitOrder(event)">
+        <div class="checkout-page-layout">
+          
+          <!-- Left Column: Forms -->
+          <div>
+            <!-- Shipping Information Box -->
+            <div class="checkout-box">
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:1.25rem;">1. Shipping & Contact Destination</h3>
+              
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Full Recipient Name *</label>
+                  <input type="text" id="checkoutName" class="form-input" placeholder="e.g. Eleanor Vance" value="Eleanor Vance" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email for Tracking *</label>
+                  <input type="email" id="checkoutEmail" class="form-input" placeholder="eleanor@example.com" value="eleanor@example.com" required>
+                </div>
+                <div class="form-group" style="grid-column:1 / -1;">
+                  <label class="form-label">Street Address *</label>
+                  <input type="text" id="checkoutAddress" class="form-input" placeholder="742 Evergreen Terrace, Suite 100" value="742 Evergreen Terrace" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">City *</label>
+                  <input type="text" id="checkoutCity" class="form-input" value="Springfield" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Postal / ZIP Code *</label>
+                  <input type="text" id="checkoutZip" class="form-input" value="97477" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping Speed Selector -->
+            <div class="checkout-box">
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:1.25rem;">2. Delivery Service Speed</h3>
+              <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <label style="display:flex; align-items:center; justify-content:space-between; padding:1rem; border:1px solid var(--primary); border-radius:var(--radius-md); background:var(--primary-light); cursor:pointer;">
+                  <div style="display:flex; align-items:center; gap:0.75rem;">
+                    <input type="radio" name="shippingSpeed" value="express" checked style="accent-color:var(--primary);">
+                    <div>
+                      <strong style="font-size:0.95rem;">DHL Express Worldwide Air</strong>
+                      <div style="font-size:0.8rem; color:var(--text-muted);">Estimated arrival in 2-4 business days with live tracking</div>
+                    </div>
+                  </div>
+                  <strong style="color:var(--primary);">Complimentary</strong>
+                </label>
+
+                <label style="display:flex; align-items:center; justify-content:space-between; padding:1rem; border:1px solid var(--border-subtle); border-radius:var(--radius-md); background:var(--bg-surface); cursor:pointer;">
+                  <div style="display:flex; align-items:center; gap:0.75rem;">
+                    <input type="radio" name="shippingSpeed" value="overnight" style="accent-color:var(--primary);">
+                    <div>
+                      <strong style="font-size:0.95rem;">Priority Next-Day Dispatch</strong>
+                      <div style="font-size:0.8rem; color:var(--text-muted);">Guaranteed morning delivery & signature confirmation</div>
+                    </div>
+                  </div>
+                  <strong>+$19.00</strong>
+                </label>
+              </div>
+            </div>
+
+            <!-- Payment Simulation Box -->
+            <div class="checkout-box">
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:1.25rem;">3. Payment Authorization</h3>
+              
+              <div class="payment-tabs">
+                <div class="payment-tab-btn active" data-method="card">💳 Credit Card</div>
+                <div class="payment-tab-btn" data-method="applepay">🍏 Apple Pay</div>
+                <div class="payment-tab-btn" data-method="paypal">🅿️ PayPal</div>
+              </div>
+
+              <div id="cardFieldsWrapper">
+                <div class="form-group">
+                  <label class="form-label">Card Number</label>
+                  <input type="text" id="cardNumberInput" class="form-input" placeholder="4532 •••• •••• 8892" value="4532 8892 4812 7701" required>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                  <div class="form-group">
+                    <label class="form-label">Expiry (MM/YY)</label>
+                    <input type="text" id="cardExpiryInput" class="form-input" placeholder="08/29" value="08/29" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Security CVC</label>
+                    <input type="password" class="form-input" placeholder="842" value="842" maxlength="4" required>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:1.5rem;">
+                Authorize & Place Order 🔒
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Sticky Order Summary -->
+          <aside class="order-summary-card">
+            <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:1rem;">Order Review</h3>
+
+            <div id="checkoutItemsList" style="max-height:300px; overflow-y:auto; margin-bottom:1.25rem;"></div>
+
+            <div style="display:flex; flex-direction:column; gap:0.75rem; border-top:1px solid var(--border-subtle); padding-top:1rem; font-size:0.9rem;">
+              <div class="flex-between">
+                <span class="text-muted">Subtotal:</span>
+                <strong id="checkoutSubtotal">$0.00</strong>
+              </div>
+              <div class="flex-between" id="checkoutDiscountRow" style="display:none; color:var(--success);">
+                <span>Voucher Savings:</span>
+                <strong id="checkoutDiscount">-$0.00</strong>
+              </div>
+              <div class="flex-between">
+                <span class="text-muted">Express Shipping:</span>
+                <strong id="checkoutShipping">FREE</strong>
+              </div>
+              <div class="flex-between">
+                <span class="text-muted">Estimated Sales Tax:</span>
+                <strong id="checkoutTax">$0.00</strong>
+              </div>
+              <div class="flex-between" style="border-top:1px solid var(--border-subtle); padding-top:0.75rem; margin-top:0.25rem; font-size:1.35rem; font-weight:800;">
+                <span>Total Due:</span>
+                <span id="checkoutTotal" style="color:var(--primary); font-family:var(--font-heading);">$0.00</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem; padding:1rem; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
+              🔒 <strong>Peace of Mind Guarantee:</strong> Your transaction is protected with 256-bit SSL encryption. We never store raw credit card data.
+            </div>
+          </aside>
+
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Order Confirmed Modal Dialog -->
+  <div id="orderConfirmedModal" class="modal-overlay">
+    <div class="modal-dialog" style="max-width:580px; text-align:center; padding:3rem 2rem;">
+      <div style="width:72px; height:72px; border-radius:50%; background:var(--success-light); color:var(--success); font-size:2.2rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem;">
+        ✓
+      </div>
+      <h2 style="font-size:1.85rem; font-weight:800; margin-bottom:0.5rem;">Order Successfully Confirmed!</h2>
+      <p style="color:var(--text-muted); font-size:0.95rem; max-width:440px; margin:0 auto 1.5rem;">
+        Your precision instruments have been scheduled for prompt assembly and dispatch.
+      </p>
+
+      <div style="background:var(--bg-subtle); border-radius:var(--radius-md); padding:1.25rem; max-width:380px; margin:0 auto 2rem; text-align:left; font-size:0.875rem;">
+        <div class="flex-between" style="margin-bottom:0.5rem;">
+          <span class="text-muted">Order Identifier:</span>
+          <strong id="modalOrderId">ORD-94812</strong>
+        </div>
+        <div class="flex-between" style="margin-bottom:0.5rem;">
+          <span class="text-muted">Total Charged:</span>
+          <strong id="modalTotal">$0.00</strong>
+        </div>
+        <div class="flex-between">
+          <span class="text-muted">Est. Delivery:</span>
+          <strong id="modalDelivery">Oct 06, 2026</strong>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:1rem;">
+        <a href="orders.html" class="btn btn-primary">
+          View Shipment Tracking
+        </a>
+        <a href="shop.html" class="btn btn-secondary">
+          Continue Browsing
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Domain Scripts -->
+  <script src="js/data/products.js"></script>
+  <script src="js/modules/storage.js"></script>
+  <script src="js/modules/currency.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/wishlist.js"></script>
+  <script src="js/modules/orders.js"></script>
+  <script src="js/components/header.js"></script>
+  <script src="js/components/quickview.js"></script>
+  <script src="js/components/chat.js"></script>
+  <script src="js/pages/checkout.js"></script>
+</body>
+</html>

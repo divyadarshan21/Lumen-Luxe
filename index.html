@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMEN LUXE | Precision Crafted Flagship Goods</title>
+  <meta name="description" content="Discover audiophile acoustics, Swiss quartz horology, everyday commute gear, and minimalist lifestyle tech. Free express shipping worldwide.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-container">
+      <div class="announcement-ticker">
+        <span class="live-dot"></span>
+        <span>⚡ Flash Offer: Use voucher code <strong>SAVE20</strong> for 20% off all flagship instruments | Free Express Shipping over $75</span>
+      </div>
+      <div class="announcement-meta">
+        <select id="currencySelector" class="selector-dropdown" title="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+        <button id="themeToggleBtn" class="selector-dropdown" title="Toggle Light/Dark Theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Main Header -->
+  <header class="main-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">✦</div>
+        <div class="brand-name">LUMEN<span>LUXE</span></div>
+      </a>
+
+      <!-- Search with Live Auto-suggest -->
+      <div class="header-search">
+        <div class="search-input-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="mainSearchInput" class="search-input" placeholder="Search audio, watches, backpacks, cameras..." autocomplete="off">
+          <button id="searchClearBtn" class="search-clear-btn" title="Clear">✕</button>
+        </div>
+        <div id="searchDropdown" class="search-dropdown"></div>
+      </div>
+
+      <!-- Main Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="shop.html?category=audio" class="nav-link">Audio</a>
+        <a href="shop.html?category=wearables" class="nav-link">Wearables</a>
+        <a href="orders.html" class="nav-link">Track Order</a>
+      </nav>
+
+      <!-- Action Badges (Wishlist & Cart) -->
+      <div class="header-actions">
+        <a href="orders.html" class="btn-icon" title="My Orders & Shipments">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </a>
+
+        <a href="shop.html" class="btn-icon" title="Wishlist">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span id="wishlistBadgeCount" class="badge-count" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="btn-icon" title="Shopping Cart">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span id="cartBadgeCount" class="badge-count" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <!-- Hero Spotlight Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>✨</span> Flagship Series 2026
+          </div>
+          <h1 class="hero-title">
+            Designed for Purpose.<br>
+            <span class="hero-title-highlight">Engineered for Life.</span>
+          </h1>
+          <p class="hero-desc">
+            Acoustic perfection, surgical stainless horology, weatherproof commuter travel, and modern studio essentials crafted for a lifetime.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="shop.html" class="btn btn-primary btn-lg">
+              <span>Explore All Catalog</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="shop.html?category=audio" class="btn btn-secondary btn-lg">
+              <span>Discover Audio</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <h3>50,000+</h3>
+              <p>Global Enthusiasts</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>4.9 / 5.0</h3>
+              <p>Verified Rating</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>99.8%</h3>
+              <p>On-Time Express Dispatch</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-card">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000&auto=format&fit=crop&q=80" alt="Aura Pro Headphones" class="hero-banner-img">
+          <div class="hero-floating-card">
+            <div>
+              <div style="font-weight:800; font-size:1.05rem;">Aura Pro Wireless ANC</div>
+              <div style="font-size:0.8125rem; color:var(--text-muted);">Titanium 40mm Drivers • 45h ANC Playtime</div>
+            </div>
+            <a href="product.html?id=prod-001" class="btn btn-primary btn-sm">
+              View Instrument →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Guarantees -->
+    <section class="services-section">
+      <div class="container services-grid">
+        <div class="service-card">
+          <div class="service-icon-box">✈️</div>
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">Express Worldwide</div>
+            <div style="font-size:0.775rem; color:var(--text-muted);">Free delivery on orders over $75</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-box">🛡️</div>
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">30-Day Money Back</div>
+            <div style="font-size:0.775rem; color:var(--text-muted);">Hassle-free evaluation period</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-box">🔒</div>
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">Bank-Grade Security</div>
+            <div style="font-size:0.775rem; color:var(--text-muted);">256-bit encrypted checkout</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-box">💬</div>
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">24/7 AI Concierge</div>
+            <div style="font-size:0.775rem; color:var(--text-muted);">Real-time support & guidance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flash Deals Banner -->
+    <div class="container">
+      <div class="flash-deals-banner">
+        <div>
+          <span class="badge badge-hot" style="background:#ef4444; color:#ffffff; margin-bottom:0.75rem;">Limited Allocation</span>
+          <h2 style="font-size:1.85rem; color:#ffffff; margin-bottom:0.35rem;">⚡ Flash Deals: Up to 30% Off</h2>
+          <p style="color:#c7d2fe; font-size:0.95rem;">Use code <strong>SAVE20</strong> at checkout to claim additional savings on select studio gear.</p>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-item">
+            <span id="dealHours" class="countdown-num">09</span>
+            <span class="countdown-lbl">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span id="dealMins" class="countdown-num">45</span>
+            <span class="countdown-lbl">Mins</span>
+          </div>
+          <div class="countdown-item">
+            <span id="dealSecs" class="countdown-num">18</span>
+            <span class="countdown-lbl">Secs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Highlights -->
+    <section class="container" style="margin-top:3.5rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Curated Disciplines</h2>
+          <p class="section-subtitle">Navigate through our focused collections designed for modern creators.</p>
+        </div>
+        <a href="shop.html" class="btn btn-secondary btn-sm">View All Catalog →</a>
+      </div>
+
+      <div class="categories-grid">
+        <a href="shop.html?category=audio" class="category-card">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&auto=format&fit=crop&q=80" alt="Audio" class="category-card-bg" />
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h4 style="font-size:1.15rem; font-weight:800;">Audio & Sound</h4>
+            <div style="font-size:0.75rem; color:#e2e8f0;">Headphones & Speakers</div>
+          </div>
+        </a>
+
+        <a href="shop.html?category=wearables" class="category-card">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=80" alt="Wearables" class="category-card-bg" />
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h4 style="font-size:1.15rem; font-weight:800;">Horology & Fitness</h4>
+            <div style="font-size:0.75rem; color:#e2e8f0;">Watches & Smart Bands</div>
+          </div>
+        </a>
+
+        <a href="shop.html?category=fashion" class="category-card">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=80" alt="Fashion" class="category-card-bg" />
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h4 style="font-size:1.15rem; font-weight:800;">Commute & Apparel</h4>
+            <div style="font-size:0.75rem; color:#e2e8f0;">Waxed Canvas & Footwear</div>
+          </div>
+        </a>
+
+        <a href="shop.html?category=electronics" class="category-card">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&auto=format&fit=crop&q=80" alt="Tech" class="category-card-bg" />
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h4 style="font-size:1.15rem; font-weight:800;">Tech & Cinema</h4>
+            <div style="font-size:0.75rem; color:#e2e8f0;">Mirrorless & Keyboards</div>
+          </div>
+        </a>
+
+        <a href="shop.html?category=lifestyle" class="category-card">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=80" alt="Lifestyle" class="category-card-bg" />
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h4 style="font-size:1.15rem; font-weight:800;">Home & Studio</h4>
+            <div style="font-size:0.75rem; color:#e2e8f0;">Pour-Over & Desk Lamps</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Products Grid -->
+    <section class="container" style="margin-top:3.5rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Flagship Showcase</h2>
+          <p class="section-subtitle">Individually tested instruments built for enduring everyday performance.</p>
+        </div>
+        <a href="shop.html" class="btn btn-secondary btn-sm">View Complete Store →</a>
+      </div>
+
+      <div class="products-grid" id="featuredProductsGrid"></div>
+    </section>
+
+    <!-- Customer Reviews Grid -->
+    <section class="container" style="margin-top:5rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Authentic Owner Feedback</h2>
+          <p class="section-subtitle">Real experiences from creators, developers, and professionals worldwide.</p>
+        </div>
+      </div>
+      <div class="reviews-grid" id="homeReviewsGrid"></div>
+    </section>
+
+    <!-- VIP Club Newsletter -->
+    <section class="container">
+      <div class="newsletter-card">
+        <div>
+          <span class="badge badge-sale" style="background:rgba(255,255,255,0.2); color:#ffffff; margin-bottom:0.75rem;">Private Circle</span>
+          <h2 style="font-size:2.25rem; font-weight:800; color:#ffffff; margin-bottom:0.5rem;">Unlock Member Perks</h2>
+          <p style="color:#c7d2fe; font-size:1rem;">
+            Join our subscriber collective to receive immediate access to private releases and an instant <strong>10% voucher code</strong>.
+          </p>
+        </div>
+        <form id="homeNewsletterForm">
+          <div class="newsletter-input-group">
+            <input type="email" id="homeNewsletterEmail" class="newsletter-input" placeholder="Enter your email address..." required>
+            <button type="submit" class="btn btn-primary" style="border-radius:var(--radius-full);">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand-logo" style="margin-bottom:1rem;">
+          <div class="brand-logo-icon">✦</div>
+          <div class="brand-name">LUMEN<span>LUXE</span></div>
+        </a>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; max-width:320px;">
+          Pioneering minimalist lifestyle instruments with acoustic fidelity, surgical build materials, and carbon-neutral distribution.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon" title="Twitter / X">𝕏</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="#" class="social-icon" title="Discord">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Storefront</h4>
+        <div class="footer-links">
+          <a href="shop.html" class="footer-link">All Products</a>
+          <a href="shop.html?category=audio" class="footer-link">Audio & Sound</a>
+          <a href="shop.html?category=wearables" class="footer-link">Horology & Watches</a>
+          <a href="shop.html?category=fashion" class="footer-link">Apparel & Gear</a>
+          <a href="shop.html?category=electronics" class="footer-link">Tech & Camera</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Account & Care</h4>
+        <div class="footer-links">
+          <a href="orders.html" class="footer-link">Track Shipment</a>
+          <a href="cart.html" class="footer-link">Shopping Bag</a>
+          <a href="javascript:void(0)" class="footer-link" onclick="ChatWidget.handleQuickPrompt('shipping policy')">Shipping Speeds</a>
+          <a href="javascript:void(0)" class="footer-link" onclick="ChatWidget.handleQuickPrompt('return policy')">30-Day Returns</a>
+          <a href="javascript:void(0)" class="footer-link" onclick="document.getElementById('chatPanel').classList.add('active')">Live Concierge</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Design Labs</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6;">
+          540 Howard Street, Suite 400<br>
+          San Francisco, CA 94105<br>
+          <span style="color:var(--primary); font-weight:700; display:inline-block; margin-top:0.5rem;">concierge@lumenluxe.io</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 LUMEN LUXE Inc. All rights reserved. Professional Grade Craftsmanship.</div>
+      <div class="payment-badges">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">APPLE PAY</span>
+        <span class="payment-chip">PAYPAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 24/7 AI Concierge Widget -->
+  <button id="chatWidgetToggle" class="chat-widget-btn" title="Live AI Concierge">
+    <span>💬 AI Concierge</span>
+    <span class="live-dot" style="margin-left:4px;"></span>
+  </button>
+
+  <div id="chatPanel" class="chat-panel">
+    <div class="chat-header">
+      <div style="display:flex; align-items:center; gap:0.65rem;">
+        <div style="width:10px; height:10px; border-radius:50%; background:#22c55e;"></div>
+        <div>
+          <div style="font-weight:800; font-size:0.9rem;">Lumen AI Concierge</div>
+          <div style="font-size:0.7rem; opacity:0.85;">Active & Ready to Assist</div>
+        </div>
+      </div>
+      <button id="chatCloseBtn" style="color:#ffffff; font-size:1rem; cursor:pointer;">✕</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+      <div class="chat-msg bot">
+        Welcome to Lumen Luxe! How may I assist you today? Ask about promo codes, technical specifications, or shipping timelines.
+      </div>
+    </div>
+
+    <div class="chat-suggestions">
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('Any active discount codes?')">🏷️ Discounts?</span>
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('How fast is express delivery?')">✈️ Shipping</span>
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('Best audiophile headphones?')">🎧 Headphones</span>
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('What is your return policy?')">🔄 Returns</span>
+    </div>
+
+    <div class="chat-input-bar">
+      <input type="text" id="chatInput" class="chat-input-field" placeholder="Ask anything about our instruments...">
+      <button id="chatSendBtn" class="btn btn-primary" style="padding:0.4rem 0.75rem; border-radius:var(--radius-sm); font-size:0.8125rem;">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Mount -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Domain Scripts -->
+  <script src="js/data/products.js"></script>
+  <script src="js/modules/storage.js"></script>
+  <script src="js/modules/currency.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/wishlist.js"></script>
+  <script src="js/modules/orders.js"></script>
+  <script src="js/components/header.js"></script>
+  <script src="js/components/quickview.js"></script>
+  <script src="js/components/chat.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

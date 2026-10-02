@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag | LUMEN LUXE</title>
+  <meta name="description" content="Review your selected luxury audio, watches, and commute instruments before checkout.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-container">
+      <div class="announcement-ticker">
+        <span class="live-dot"></span>
+        <span>⚡ Flash Offer: Use voucher code <strong>SAVE20</strong> for 20% off all orders | Free Express Shipping over $75</span>
+      </div>
+      <div class="announcement-meta">
+        <select id="currencySelector" class="selector-dropdown" title="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+        <button id="themeToggleBtn" class="selector-dropdown" title="Toggle Light/Dark Theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">✦</div>
+        <div class="brand-name">LUMEN<span>LUXE</span></div>
+      </a>
+
+      <!-- Search with Live Auto-suggest -->
+      <div class="header-search">
+        <div class="search-input-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="mainSearchInput" class="search-input" placeholder="Search audio, watches, backpacks, cameras..." autocomplete="off">
+          <button id="searchClearBtn" class="search-clear-btn" title="Clear">✕</button>
+        </div>
+        <div id="searchDropdown" class="search-dropdown"></div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="shop.html?category=audio" class="nav-link">Audio</a>
+        <a href="shop.html?category=wearables" class="nav-link">Wearables</a>
+        <a href="orders.html" class="nav-link">Track Order</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="orders.html" class="btn-icon" title="My Orders">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </a>
+
+        <a href="shop.html" class="btn-icon" title="Wishlist">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span id="wishlistBadgeCount" class="badge-count" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="btn-icon" title="Shopping Cart">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span id="cartBadgeCount" class="badge-count" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span class="current">Shopping Bag</span>
+      </nav>
+
+      <div class="section-header">
+        <div>
+          <h1 class="section-title">Review Your Bag</h1>
+          <p class="section-subtitle">Inspect your selected items, apply promo vouchers, and verify shipping thresholds.</p>
+        </div>
+      </div>
+
+      <!-- Empty Cart State -->
+      <div id="cartEmptyState" class="empty-catalog" style="display:none; margin: 3rem 0;">
+        <div style="font-size:3rem; margin-bottom:1rem;">🛍️</div>
+        <h3>Your Shopping Bag is Currently Empty</h3>
+        <p style="color:var(--text-muted); margin:0.5rem 0 1.5rem; font-size:0.95rem;">
+          Explore our collection of studio headphones, Swiss timepieces, and travel carry gear.
+        </p>
+        <a href="shop.html" class="btn btn-primary">Discover Catalog</a>
+      </div>
+
+      <!-- Main Cart Layout -->
+      <div class="cart-page-layout">
+        <!-- Cart Table -->
+        <div id="cartTableWrapper" class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Instrument</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th style="text-align:right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="cartTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Order Summary Column -->
+        <aside id="cartSummaryCard" class="order-summary-card">
+          <!-- Free Shipping Progress -->
+          <div class="free-shipping-card">
+            <div id="freeShipMeterText" style="font-size:0.8125rem;">Checking free shipping...</div>
+            <div class="progress-bar-bg">
+              <div id="freeShipMeterFill" class="progress-bar-fill" style="width:0%;"></div>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:1.25rem;">Order Summary</h3>
+
+          <!-- Promo Code Input -->
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-size:0.8125rem; font-weight:700; margin-bottom:0.4rem;">Promo Code (Try: SAVE20)</div>
+            <div style="display:flex; gap:0.5rem;">
+              <input type="text" id="cartPromoInput" class="form-input" placeholder="e.g. SAVE20" style="text-transform:uppercase;">
+              <button class="btn btn-secondary btn-sm" onclick="CartPage.handleApplyPromo()">Apply</button>
+            </div>
+            <!-- Active promo tag -->
+            <div id="activePromoTag" style="display:none; align-items:center; justify-content:space-between; background:var(--success-light); color:var(--success); padding:0.4rem 0.6rem; border-radius:var(--radius-sm); font-size:0.75rem; margin-top:0.5rem;"></div>
+          </div>
+
+          <!-- Calculation Rows -->
+          <div style="display:flex; flex-direction:column; gap:0.75rem; border-top:1px solid var(--border-subtle); padding-top:1rem; font-size:0.9rem;">
+            <div class="flex-between">
+              <span class="text-muted">Subtotal:</span>
+              <strong id="summarySubtotal">$0.00</strong>
+            </div>
+            <div class="flex-between" id="summaryDiscountRow" style="display:none; color:var(--success);">
+              <span>Voucher Discount:</span>
+              <strong id="summaryDiscount">-$0.00</strong>
+            </div>
+            <div class="flex-between">
+              <span class="text-muted">Estimated Shipping:</span>
+              <strong id="summaryShipping">FREE</strong>
+            </div>
+            <div class="flex-between">
+              <span class="text-muted">Estimated Sales Tax (5%):</span>
+              <strong id="summaryTax">$0.00</strong>
+            </div>
+            <div class="flex-between" style="border-top:1px solid var(--border-subtle); padding-top:0.75rem; margin-top:0.25rem; font-size:1.25rem; font-weight:800;">
+              <span>Total:</span>
+              <span id="summaryTotal" style="color:var(--primary); font-family:var(--font-heading);">$0.00</span>
+            </div>
+          </div>
+
+          <a href="checkout.html" class="btn btn-primary" style="width:100%; margin-top:1.5rem; padding:0.9rem;">
+            Proceed to Checkout →
+          </a>
+
+          <div style="display:flex; justify-content:center; gap:0.75rem; margin-top:1.25rem;">
+            <span class="payment-chip">VISA</span>
+            <span class="payment-chip">MASTERCARD</span>
+            <span class="payment-chip">APPLE PAY</span>
+            <span class="payment-chip">PAYPAL</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand-logo" style="margin-bottom:1rem;">
+          <div class="brand-logo-icon">✦</div>
+          <div class="brand-name">LUMEN<span>LUXE</span></div>
+        </a>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; max-width:320px;">
+          Pioneering minimalist lifestyle instruments with acoustic fidelity, surgical build materials, and carbon-neutral distribution.
+        </p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Storefront</h4>
+        <div class="footer-links">
+          <a href="shop.html" class="footer-link">All Products</a>
+          <a href="shop.html?category=audio" class="footer-link">Audio & Sound</a>
+          <a href="shop.html?category=wearables" class="footer-link">Horology & Watches</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Account & Care</h4>
+        <div class="footer-links">
+          <a href="orders.html" class="footer-link">Track Shipment</a>
+          <a href="cart.html" class="footer-link">Shopping Bag</a>
+          <a href="javascript:void(0)" class="footer-link" onclick="ChatWidget.handleQuickPrompt('shipping policy')">Shipping Speeds</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Design Labs</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6;">
+          540 Howard Street, Suite 400<br>
+          San Francisco, CA 94105<br>
+          <span style="color:var(--primary); font-weight:700; display:inline-block; margin-top:0.5rem;">concierge@lumenluxe.io</span>
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 LUMEN LUXE Inc. All rights reserved. Professional Grade Craftsmanship.</div>
+      <div class="payment-badges">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">APPLE PAY</span>
+        <span class="payment-chip">PAYPAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 24/7 AI Concierge Widget -->
+  <button id="chatWidgetToggle" class="chat-widget-btn" title="Live AI Concierge">
+    <span>💬 AI Concierge</span>
+    <span class="live-dot" style="margin-left:4px;"></span>
+  </button>
+
+  <div id="chatPanel" class="chat-panel">
+    <div class="chat-header">
+      <div style="display:flex; align-items:center; gap:0.65rem;">
+        <div style="width:10px; height:10px; border-radius:50%; background:#22c55e;"></div>
+        <div>
+          <div style="font-weight:800; font-size:0.9rem;">Lumen AI Concierge</div>
+          <div style="font-size:0.7rem; opacity:0.85;">Active & Ready to Assist</div>
+        </div>
+      </div>
+      <button id="chatCloseBtn" style="color:#ffffff; font-size:1rem; cursor:pointer;">✕</button>
+    </div>
+    <div id="chatMessages" class="chat-messages">
+      <div class="chat-msg bot">
+        Need assistance with your shopping bag, promo codes, or delivery speeds?
+      </div>
+    </div>
+    <div class="chat-suggestions">
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('Any active discount codes?')">🏷️ Discounts?</span>
+      <span class="chat-pill" onclick="ChatWidget.handleQuickPrompt('How fast is express delivery?')">✈️ Shipping</span>
+    </div>
+    <div class="chat-input-bar">
+      <input type="text" id="chatInput" class="chat-input-field" placeholder="Ask anything...">
+      <button id="chatSendBtn" class="btn btn-primary" style="padding:0.4rem 0.75rem; border-radius:var(--radius-sm); font-size:0.8125rem;">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Domain Scripts -->
+  <script src="js/data/products.js"></script>
+  <script src="js/modules/storage.js"></script>
+  <script src="js/modules/currency.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/wishlist.js"></script>
+  <script src="js/modules/orders.js"></script>
+  <script src="js/components/header.js"></script>
+  <script src="js/components/quickview.js"></script>
+  <script src="js/components/chat.js"></script>
+  <script src="js/pages/cart-page.js"></script>
+</body>
+</html>
