@@ -44,27 +44,27 @@ const CartPage = {
               <img src="${item.image}" alt="${item.name}" class="cart-thumb-img" />
             </a>
             <div>
-              <a href="product.html?id=${item.id}" style="font-weight:700; font-size:0.95rem; color:var(--text-main);">
+              <a href="product.html?id=${item.id}" style="font-weight:700; font-size:1.05rem; color:var(--text-main);">
                 ${item.name}
               </a>
-              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">
+              <div style="font-size:0.875rem; color:var(--text-muted); margin-top:0.25rem;">
                 Color: ${item.color} • Size: ${item.size}
               </div>
-              <div style="font-size:0.75rem; color:var(--text-subtle);">SKU: ${item.sku || 'LL-PROD'}</div>
+              <div style="font-size:0.85rem; color:var(--text-subtle); margin-top:0.15rem;">SKU: ${item.sku || 'LL-PROD'}</div>
             </div>
           </div>
         </td>
-        <td style="font-weight:600;">
+        <td style="font-weight:600; font-size:1rem;">
           ${CurrencyManager.format(item.price)}
         </td>
         <td>
           <div class="qty-stepper" style="border:1px solid var(--border-subtle); border-radius:var(--radius-sm);">
-            <button class="qty-btn" style="width:30px; height:30px;" onclick="CartManager.updateQty(${idx}, ${item.qty - 1})">−</button>
-            <span class="qty-input" style="width:34px; font-size:0.85rem;">${item.qty}</span>
-            <button class="qty-btn" style="width:30px; height:30px;" onclick="CartManager.updateQty(${idx}, ${item.qty + 1})">+</button>
+            <button class="qty-btn" style="width:34px; height:34px;" onclick="CartManager.updateQty(${idx}, ${item.qty - 1})">−</button>
+            <span class="qty-input" style="width:38px; font-size:0.95rem;">${item.qty}</span>
+            <button class="qty-btn" style="width:34px; height:34px;" onclick="CartManager.updateQty(${idx}, ${item.qty + 1})">+</button>
           </div>
         </td>
-        <td style="font-weight:800; color:var(--text-main);">
+        <td style="font-weight:800; font-size:1.05rem; color:var(--text-main);">
           ${CurrencyManager.format(item.price * item.qty)}
         </td>
         <td style="text-align:right;">

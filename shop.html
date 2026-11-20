@@ -70,7 +70,7 @@
               type="text"
               id="mainSearchInput"
               class="search-input"
-              placeholder="Search audio, watches, backpacks, cameras..."
+              placeholder="Search audio, watches, gear..."
               autocomplete="off"
             />
             <button id="searchClearBtn" class="search-clear-btn" title="Clear">
@@ -82,7 +82,7 @@
 
         <nav class="nav-links">
           <a href="index.html" class="nav-link">Home</a>
-          <a href="shop.html" class="nav-link active">Shop Catalog</a>
+          <a href="shop.html" class="nav-link">Shop Catalog</a>
           <a href="shop.html?category=audio" class="nav-link">Audio</a>
           <a href="shop.html?category=wearables" class="nav-link">Wearables</a>
           <a href="orders.html" class="nav-link">Track Order</a>
@@ -161,7 +161,7 @@
 
         <div class="section-header">
           <div>
-            <h1 class="section-title">Store</h1>
+            <h1 class="section-title">Flagship Collection</h1>
             <p class="section-subtitle">
               Use the dynamic filters to discover precision-engineered
               instruments tailored to your requirements.
@@ -227,7 +227,7 @@
                   value="1500"
                 />
                 <div class="range-labels">
-                  <span>Min: $50</span>
+                  <span id="priceMinVal">Min: $50.00</span>
                   <span
                     id="priceMaxVal"
                     style="color: var(--primary); font-weight: 700"
@@ -542,6 +542,7 @@
     <script src="js/modules/cart.js"></script>
     <script src="js/modules/wishlist.js"></script>
     <script src="js/modules/orders.js"></script>
+    <script src="js/modules/auth.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/quickview.js"></script>
     <script src="js/components/chat.js"></script>

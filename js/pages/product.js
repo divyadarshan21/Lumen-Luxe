@@ -265,7 +265,7 @@ const ProductPage = {
               <form onsubmit="ProductPage.submitReview(event)">
                 <div class="form-group">
                   <label class="form-label">Your Name</label>
-                  <input type="text" id="reviewAuthor" class="form-input" placeholder="e.g. Samuel K." required>
+                  <input type="text" id="reviewAuthor" class="form-input" placeholder="e.g. Samuel K." value="${typeof AuthManager !== 'undefined' && AuthManager.getCurrentUser() ? AuthManager.getCurrentUser().name : ''}" required>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Rating</label>

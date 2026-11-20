@@ -21,6 +21,9 @@ const CurrencyManager = {
   format(usdAmount) {
     const config = this.getCurrencyConfig();
     const converted = usdAmount * config.rate;
-    return `${config.symbol}${converted.toFixed(2)}`;
+    if (this.activeCurrency === "INR") {
+      return `${config.symbol}${Math.round(converted).toLocaleString("en-IN")}`;
+    }
+    return `${config.symbol}${converted.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   }
 };

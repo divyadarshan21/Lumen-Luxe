@@ -33,11 +33,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--primary);
   width: fit-content;
@@ -55,7 +55,7 @@
   -webkit-text-fill-color: transparent;
 }
 .hero-desc {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
   max-width: 520px;
 }
@@ -78,7 +78,7 @@
   font-weight: 800;
 }
 .hero-stat-item p {
-  font-size: 0.8125rem;
+  font-size: 0.925rem;
   color: var(--text-muted);
 }
 .hero-visual-card {
@@ -187,7 +187,7 @@
   font-family: var(--font-heading);
 }
 .countdown-lbl {
-  font-size: 0.65rem;
+  font-size: 0.775rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #e0e7ff;
@@ -275,7 +275,7 @@
   object-fit: cover;
 }
 .verified-tag {
-  font-size: 0.7rem;
+  font-size: 0.825rem;
   color: var(--success);
   display: flex;
   align-items: center;
@@ -314,8 +314,8 @@
    -------------------------------------------------------------------------- */
 .shop-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 270px 1fr;
+  gap: 2rem;
   align-items: start;
   margin-bottom: 5rem;
 }
@@ -323,7 +323,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.25rem;
   position: sticky;
   top: calc(var(--header-height) + 1.5rem);
   box-shadow: var(--shadow-xs);
@@ -332,12 +332,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1rem;
+  padding-bottom: 0.85rem;
   border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 .filter-reset-btn {
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   color: var(--primary);
   font-weight: 700;
 }
@@ -345,8 +345,8 @@
   text-decoration: underline;
 }
 .filter-group {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.35rem;
   border-bottom: 1px solid var(--border-subtle);
 }
 .filter-group:last-child {
@@ -355,16 +355,16 @@
   padding-bottom: 0;
 }
 .filter-title {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.85rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
 }
 .filter-chips {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 .filter-chip-item {
   display: flex;
@@ -373,7 +373,7 @@
   padding: 0.45rem 0.75rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   transition: all var(--duration-fast);
 }
@@ -386,7 +386,7 @@
 .range-slider-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 .range-slider {
   width: 100%;
@@ -397,7 +397,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 700;
 }
@@ -411,16 +411,16 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 0.75rem 1.25rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-xs);
 }
 .sort-select {
-  padding: 0.4rem 0.85rem;
+  padding: 0.42rem 0.85rem;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   background: var(--bg-surface);
   color: var(--text-main);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 .view-toggle {
   display: flex;
@@ -441,7 +441,7 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 .products-grid.list-view {
   grid-template-columns: 1fr;
@@ -631,7 +631,7 @@
   background: var(--bg-subtle);
   text-align: left;
   padding: 1rem 1.25rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -640,6 +640,7 @@
   padding: 1.25rem;
   border-bottom: 1px solid var(--border-subtle);
   vertical-align: middle;
+  font-size: 0.975rem;
 }
 .cart-product-cell {
   display: flex;
@@ -760,7 +761,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--text-muted);
   z-index: 2;

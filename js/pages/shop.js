@@ -20,9 +20,42 @@ const ShopPage = {
 
     this.parseURLParams();
     this.bindControls();
+    this.updatePriceLabels();
     this.render();
 
-    window.addEventListener("currency:changed", () => this.render());
+    window.addEventListener("currency:changed", () => {
+      this.updatePriceLabels();
+      this.render();
+    });
+
+    window.addEventListener("popstate", () => {
+      this.parseURLParams();
+      this.updateActiveCategoryChips();
+      this.render();
+      HeaderComponent.highlightActiveNavLink();
+    });
+  },
+
+  updatePriceLabels() {
+    const priceMinVal = document.getElementById("priceMinVal");
+    const priceMaxVal = document.getElementById("priceMaxVal");
+    if (priceMinVal) {
+      priceMinVal.textContent = `Min: ${CurrencyManager.format(50)}`;
+    }
+    if (priceMaxVal) {
+      priceMaxVal.textContent = CurrencyManager.format(this.state.maxPrice);
+    }
+  },
+
+  updateActiveCategoryChips() {
+    document.querySelectorAll(".filter-chip-item").forEach(chip => {
+      const cat = chip.getAttribute("data-category");
+      if (cat === this.state.category) {
+        chip.classList.add("active");
+      } else {
+        chip.classList.remove("active");
+      }
+    });
   },
 
   parseURLParams() {
@@ -57,6 +90,7 @@ const ShopPage = {
         chip.classList.add("active");
         this.syncURLParams();
         this.render();
+        HeaderComponent.highlightActiveNavLink();
       });
     });
 
@@ -126,6 +160,23 @@ const ShopPage = {
     if (mainSearchInput && this.state.search) {
       mainSearchInput.value = this.state.search;
     }
+
+    // Intercept nav links on the shop page for instant responsive tab switching
+    document.querySelectorAll(".nav-link").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && (href.startsWith("shop.html") || href === "shop.html")) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const cat = url.searchParams.get("category") || "all";
+          this.state.category = cat;
+          this.updateActiveCategoryChips();
+          this.syncURLParams();
+          this.render();
+          HeaderComponent.highlightActiveNavLink();
+        });
+      }
+    });
   },
 
   resetFilters() {
@@ -156,6 +207,8 @@ const ShopPage = {
     if (mainSearchInput) mainSearchInput.value = "";
 
     this.syncURLParams();
+    this.updatePriceLabels();
+    HeaderComponent.highlightActiveNavLink();
     this.render();
     Toast.show("Filters Cleared", "Showing all catalog items", "🔄");
   },

@@ -21,8 +21,20 @@ const CheckoutPage = {
     this.renderOrderReview();
     this.bindPaymentTabs();
     this.bindCardFormatting();
+    this.autofillAuthUser();
 
     window.addEventListener("currency:changed", () => this.renderOrderReview());
+    window.addEventListener("auth:changed", () => this.autofillAuthUser());
+  },
+
+  autofillAuthUser() {
+    const currentUser = typeof AuthManager !== "undefined" ? AuthManager.getCurrentUser() : null;
+    if (currentUser) {
+      const nameInput = document.getElementById("checkoutName");
+      const emailInput = document.getElementById("checkoutEmail");
+      if (nameInput && !nameInput.value) nameInput.value = currentUser.name;
+      if (emailInput) emailInput.value = currentUser.email;
+    }
   },
 
   renderOrderReview() {
@@ -36,10 +48,10 @@ const CheckoutPage = {
       <div style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 0; border-bottom:1px solid var(--border-subtle);">
         <img src="${item.image}" alt="${item.name}" style="width:48px; height:48px; border-radius:var(--radius-sm); object-fit:cover; background:var(--bg-subtle);" />
         <div style="flex:1;">
-          <div style="font-size:0.875rem; font-weight:700;">${item.name}</div>
-          <div style="font-size:0.75rem; color:var(--text-muted);">${item.color} • Qty: ${item.qty}</div>
+          <div style="font-size:0.975rem; font-weight:700;">${item.name}</div>
+          <div style="font-size:0.85rem; color:var(--text-muted);">${item.color} • Qty: ${item.qty}</div>
         </div>
-        <div style="font-weight:700; font-size:0.875rem;">
+        <div style="font-weight:700; font-size:0.975rem;">
           ${CurrencyManager.format(item.price * item.qty)}
         </div>
       </div>
