@@ -14,15 +14,39 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.badge-hot { background: #fee2e2; color: #ef4444; }
-.badge-new { background: #e0e7ff; color: #4338ca; }
-.badge-sale { background: #fef3c7; color: #b45309; }
-.badge-eco { background: #dcfce7; color: #15803d; }
+.badge-hot {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.badge-new {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+.badge-sale {
+  background: #fef3c7;
+  color: #b45309;
+}
+.badge-eco {
+  background: #dcfce7;
+  color: #15803d;
+}
 
-[data-theme="dark"] .badge-hot { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-[data-theme="dark"] .badge-new { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
-[data-theme="dark"] .badge-sale { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-[data-theme="dark"] .badge-eco { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+[data-theme="dark"] .badge-hot {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+[data-theme="dark"] .badge-new {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+[data-theme="dark"] .badge-sale {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+[data-theme="dark"] .badge-eco {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
 
 /* Buttons */
 .btn {
@@ -124,7 +148,9 @@
   font-weight: 700;
   color: var(--text-main);
 }
-.form-input, .form-select, .form-textarea {
+.form-input,
+.form-select,
+.form-textarea {
   width: 100%;
   padding: 0.65rem 0.95rem;
   border: 1px solid var(--border-subtle);
@@ -132,9 +158,13 @@
   background: var(--bg-surface);
   font-size: 0.875rem;
   color: var(--text-main);
-  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+  transition:
+    border-color var(--duration-fast),
+    box-shadow var(--duration-fast);
 }
-.form-input:focus, .form-select:focus, .form-textarea:focus {
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
 }
@@ -148,7 +178,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal), border-color var(--duration-normal);
+  transition:
+    transform var(--duration-normal) var(--ease-spring),
+    box-shadow var(--duration-normal),
+    border-color var(--duration-normal);
 }
 .product-card:hover {
   transform: translateY(-5px);
@@ -227,7 +260,9 @@
   color: var(--text-main);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-subtle);
-  transition: bottom 300ms var(--ease-spring), background var(--duration-fast);
+  transition:
+    bottom 300ms var(--ease-spring),
+    background var(--duration-fast);
   z-index: 2;
 }
 .quick-view-overlay-btn:hover {
@@ -265,8 +300,12 @@
   align-items: center;
   gap: 0.3rem;
 }
-.product-stock-tag.low { color: var(--warning); }
-.product-stock-tag.in { color: var(--success); }
+.product-stock-tag.low {
+  color: var(--warning);
+}
+.product-stock-tag.in {
+  color: var(--success);
+}
 
 .product-title {
   font-size: 1.05rem;
@@ -298,9 +337,15 @@
   font-size: 0.8125rem;
   margin-bottom: 0.85rem;
 }
-.star-icon { color: #f59e0b; }
-.rating-score { font-weight: 700; }
-.review-count { color: var(--text-subtle); }
+.star-icon {
+  color: #f59e0b;
+}
+.rating-score {
+  font-weight: 700;
+}
+.review-count {
+  color: var(--text-subtle);
+}
 
 .product-swatches {
   display: flex;
@@ -421,12 +466,28 @@
   animation: slideInUp 250ms ease forwards;
   transition: all var(--duration-normal);
 }
-.toast-icon { font-size: 1.25rem; }
-.toast-content { flex: 1; }
-.toast-title { font-size: 0.875rem; font-weight: 700; }
-.toast-msg { font-size: 0.75rem; color: var(--text-muted); }
+.toast-icon {
+  font-size: 1.25rem;
+}
+.toast-content {
+  flex: 1;
+}
+.toast-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.toast-msg {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
 
 @keyframes slideInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

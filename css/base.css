@@ -2,7 +2,9 @@
    LUMEN LUXE - BASE RESETS & GLOBAL TYPOGRAPHY
    ========================================================================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,7 +25,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color var(--duration-normal), color var(--duration-normal);
+  transition:
+    background-color var(--duration-normal),
+    color var(--duration-normal);
   overflow-x: hidden;
 }
 
@@ -39,7 +43,10 @@ a {
   transition: color var(--duration-fast);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -53,7 +60,8 @@ button {
   user-select: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -72,7 +80,12 @@ ul, ol {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.25;
@@ -124,7 +137,15 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
 }
-.text-center { text-align: center; }
-.text-muted { color: var(--text-muted); }
-.text-primary { color: var(--primary); }
-.font-bold { font-weight: 700; }
+.text-center {
+  text-align: center;
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-primary {
+  color: var(--primary);
+}
+.font-bold {
+  font-weight: 700;
+}

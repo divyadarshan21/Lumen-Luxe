@@ -8,8 +8,13 @@
 .hero-section {
   position: relative;
   padding: 4.5rem 0 4rem;
-  background: radial-gradient(circle at 10% 20%, var(--primary-light) 0%, transparent 40%),
-              radial-gradient(circle at 90% 80%, var(--accent-light) 0%, transparent 40%);
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      var(--primary-light) 0%,
+      transparent 40%
+    ),
+    radial-gradient(circle at 90% 80%, var(--accent-light) 0%, transparent 40%);
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -68,8 +73,14 @@
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-subtle);
 }
-.hero-stat-item h3 { font-size: 1.6rem; font-weight: 800; }
-.hero-stat-item p { font-size: 0.8125rem; color: var(--text-muted); }
+.hero-stat-item h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.hero-stat-item p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
 .hero-visual-card {
   position: relative;
   border-radius: var(--radius-xl);
@@ -84,7 +95,9 @@
   object-fit: cover;
   transition: transform 600ms var(--ease-spring);
 }
-.hero-visual-card:hover .hero-banner-img { transform: scale(1.04); }
+.hero-visual-card:hover .hero-banner-img {
+  transform: scale(1.04);
+}
 .hero-floating-card {
   position: absolute;
   bottom: 24px;
@@ -118,7 +131,9 @@
   padding: 1rem;
   border-radius: var(--radius-md);
   background: var(--bg-subtle);
-  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+  transition:
+    transform var(--duration-fast),
+    box-shadow var(--duration-fast);
 }
 .service-card:hover {
   transform: translateY(-2px);
@@ -195,7 +210,9 @@
   padding: 1.25rem;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--duration-normal), box-shadow var(--duration-normal);
+  transition:
+    transform var(--duration-normal),
+    box-shadow var(--duration-normal);
 }
 .category-card:hover {
   transform: translateY(-4px);
@@ -211,11 +228,17 @@
   transition: transform 500ms ease;
   z-index: 1;
 }
-.category-card:hover .category-card-bg { transform: scale(1.08); }
+.category-card:hover .category-card-bg {
+  transform: scale(1.08);
+}
 .category-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
   z-index: 2;
 }
 .category-card-content {
@@ -318,7 +341,9 @@
   color: var(--primary);
   font-weight: 700;
 }
-.filter-reset-btn:hover { text-decoration: underline; }
+.filter-reset-btn:hover {
+  text-decoration: underline;
+}
 .filter-group {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
@@ -352,7 +377,8 @@
   color: var(--text-muted);
   transition: all var(--duration-fast);
 }
-.filter-chip-item:hover, .filter-chip-item.active {
+.filter-chip-item:hover,
+.filter-chip-item.active {
   background: var(--primary-light);
   color: var(--primary);
   font-weight: 700;
@@ -522,7 +548,9 @@
   font-size: 1.1rem;
   font-weight: 700;
 }
-.qty-btn:hover { background: var(--bg-subtle); }
+.qty-btn:hover {
+  background: var(--bg-subtle);
+}
 .qty-input {
   width: 44px;
   text-align: center;
@@ -553,7 +581,7 @@
   color: var(--primary);
 }
 .pdp-tab-btn.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -760,7 +788,10 @@
    7. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .hero-grid, .pdp-grid, .cart-page-layout, .checkout-page-layout {
+  .hero-grid,
+  .pdp-grid,
+  .cart-page-layout,
+  .checkout-page-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -770,7 +801,9 @@
   .filters-sidebar {
     display: none;
   }
-  .services-grid, .reviews-grid, .categories-grid {
+  .services-grid,
+  .reviews-grid,
+  .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .products-grid {
@@ -785,11 +818,25 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.25rem; }
-  .products-grid, .categories-grid, .services-grid, .reviews-grid, .footer-grid {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .products-grid,
+  .categories-grid,
+  .services-grid,
+  .reviews-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
-  .nav-links { display: none; }
-  .pdp-gallery-main { height: 350px; }
-  .order-timeline { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .nav-links {
+    display: none;
+  }
+  .pdp-gallery-main {
+    height: 350px;
+  }
+  .order-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }

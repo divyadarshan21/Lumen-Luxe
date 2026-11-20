@@ -31,8 +31,15 @@
   animation: pulseGlow 1.8s infinite;
 }
 @keyframes pulseGlow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
 }
 .announcement-meta {
   display: flex;
@@ -94,7 +101,9 @@
   font-size: 1.1rem;
   box-shadow: 0 4px 10px var(--primary-glow);
 }
-.brand-name span { color: var(--primary); }
+.brand-name span {
+  color: var(--primary);
+}
 
 /* Header Search */
 .header-search {
@@ -125,7 +134,9 @@
   color: var(--text-subtle);
   display: none;
 }
-.search-clear-btn.active { display: block; }
+.search-clear-btn.active {
+  display: block;
+}
 
 .search-dropdown {
   position: absolute;
@@ -141,7 +152,9 @@
   display: none;
   z-index: 120;
 }
-.search-dropdown.active { display: block; }
+.search-dropdown.active {
+  display: block;
+}
 .search-result-item {
   display: flex;
   align-items: center;
@@ -151,16 +164,27 @@
   border-bottom: 1px solid var(--border-subtle);
   transition: background var(--duration-fast);
 }
-.search-result-item:hover { background: var(--bg-subtle); }
+.search-result-item:hover {
+  background: var(--bg-subtle);
+}
 .search-result-img {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
   object-fit: cover;
 }
-.search-result-info { flex: 1; }
-.search-result-title { font-weight: 700; font-size: 0.875rem; }
-.search-result-price { font-size: 0.8125rem; color: var(--primary); font-weight: 800; }
+.search-result-info {
+  flex: 1;
+}
+.search-result-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.search-result-price {
+  font-size: 0.8125rem;
+  color: var(--primary);
+  font-weight: 800;
+}
 
 /* Nav Links */
 .nav-links {
@@ -175,9 +199,12 @@
   position: relative;
   padding: 0.5rem 0;
 }
-.nav-link:hover, .nav-link.active { color: var(--primary); }
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
 .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -288,7 +315,9 @@
   z-index: 140;
   transition: transform var(--duration-normal);
 }
-.chat-widget-btn:hover { transform: translateY(-3px) scale(1.02); }
+.chat-widget-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
 
 .chat-panel {
   position: fixed;
@@ -306,7 +335,9 @@
   overflow: hidden;
   animation: fadeInDown 250ms ease;
 }
-.chat-panel.active { display: flex; }
+.chat-panel.active {
+  display: flex;
+}
 .chat-header {
   padding: 1rem 1.25rem;
   background: linear-gradient(135deg, var(--primary) 0%, #3730a3 100%);
